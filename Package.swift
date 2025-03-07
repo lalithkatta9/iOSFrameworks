@@ -16,7 +16,7 @@ let package = Package(
     targets: [
         .target(
             name: "RadarSDK",
-            path: "./RadarSDK.xcframework.zip",
+            path: "iOSFrameworks/RadarSDK.xcframework.zip",
             exclude: ["Info.plist"],
             resources: [.process("PrivacyInfo.xcprivacy")],
             publicHeadersPath: "Include",
