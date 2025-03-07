@@ -1,28 +1,22 @@
-// swift-tools-version:5.3
+// swift-tools-version: 5.9
 import PackageDescription
 
 let package = Package(
     name: "RadarSDK",
     platforms: [
-        .iOS(.v10)
+        .iOS(.v13)
     ],
     products: [
         .library(
             name: "RadarSDK",
             targets: ["RadarSDK"]
-        ),
+        )
     ],
-    dependencies: [],
     targets: [
-        .target(
+        .binaryTarget(
             name: "RadarSDK",
-            path: "iOSFrameworks/RadarSDK.xcframework.zip",
-            exclude: ["Info.plist"],
-            resources: [.process("PrivacyInfo.xcprivacy")],
-            publicHeadersPath: "Include",
-            cSettings: [
-                .headerSearchPath(".")
-            ]
-        ),
+            url: "https://github.com/lalithkatta9/iOSFrameworks/releases/download/1.0/RadarSDK.xcframework.zip",
+            checksum: "f4c5e99828969140ce60df1299eaea196fdc561bc5072f31a36bd83cbc90cf36"
+        )
     ]
 )
